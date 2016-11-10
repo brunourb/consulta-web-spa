@@ -53,7 +53,7 @@
 	    <div class="row">	
 	        <div class="col-md-10 col-md-offset-1">
 	        	<div>
-	        		<h1>Búsqueda de registros</h1>
+	        		<h1>Busqueda de registros</h1>
 	        	</div> 
 			    <div class="panel panel-primary">
 				   <div class="panel-heading">Resultado de la consulta</div>
@@ -78,7 +78,7 @@
 				        <thead>
 				             <tr>
 				             	<th><input id="select_all" name="select_all" value="1" type="checkbox"></th>
-				                <th>line_number</th>
+				                <th>line_id</th>
 				                <th>play_name</th>
 				                <th>speaker</th>
 				                <th>speech_number</th>
@@ -211,14 +211,16 @@
 					{
 						    "mData":   "isExport",
 						    render: function ( value, type, row ) {
-						    	return '<input type="checkbox" onclick="almacenarChecks(this);" class="checkbox1" id="'+row.line_number+'"> ';
+						    	return '<input type="checkbox" onclick="almacenarChecks(this);" class="checkbox1" id="'+row.line_id+'"> ';
 						    },
 						    className: "select-checkbox",
 						    orderable: false
 					},
-					{ "mData": "line_number",
+					{ "mData": "line_id",
 						render: function ( value, type, row ) {
-					    	return row.line_number +"-"+ row.speech_number;
+							debugger;
+					    	//return row.line_number +"-"+ row.speech_number;
+							return row.line_id;
 					    }
 					},
 					{ "mData": "play_name" },
@@ -238,6 +240,8 @@
 
 		// Handle click on checkbox
 		   $('#tableEjemplo tbody').on('click', 'input[type="checkbox"]', function(e){
+
+			  debugger;
 		      var $row = $(this).closest('tr');
 
 		      // Get row ID
@@ -309,6 +313,7 @@
 		   });
 		   
 		   $('#btnExport').click(function() {
+			   debugger;
 			   var textNametoSearch = $('#textName').val();
 			   var selectall = $("#select_all")[0];
 			   if (textNametoSearch!=null){
@@ -318,7 +323,7 @@
 				   }
 				   else {
 					   if(exportStatus){
-						   //exportar todos menos los exluidos
+						   //exportar todos menos los excluidos
 						   window.location.href = "${pageContext.request.contextPath}/data/deselectedToExportCSV?text="+textNametoSearch+"&desmarcados="+checksDesmarcados;
 					   } else {
 						   //exportar solo los seleccionados
@@ -373,6 +378,7 @@
 	 }
  
  	function almacenarChecks(element){
+		debugger;
  		 var indexs = $.inArray(element.id, checksSeleccionados);
  		 var indexd = $.inArray(element.id, checksDesmarcados);
  		

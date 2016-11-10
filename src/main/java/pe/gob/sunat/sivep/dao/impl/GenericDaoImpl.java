@@ -35,7 +35,7 @@ public abstract class GenericDaoImpl {
 
 		SearchRequestBuilder searchRequestBuilder = elasticSearchClient.prepareSearch(getIndexName()).setTypes(getTypeName())
 				.setQuery(query)
-				.setPostFilter(FilterBuilders.termsFilter("line_number", selecedtList));
+				.setPostFilter(FilterBuilders.termsFilter("line_id", selecedtList));
 		
 				SearchResponse response = searchRequestBuilder.execute().actionGet();
 		logger.info("genericSearchByQueryAndFilter Query using Java Client:\n " + searchRequestBuilder.internalBuilder());

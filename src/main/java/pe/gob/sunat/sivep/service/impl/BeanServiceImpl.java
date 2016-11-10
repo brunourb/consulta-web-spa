@@ -56,6 +56,8 @@ public class BeanServiceImpl implements BeanService {
 		
 		QueryBuilder queryBuilder = getQueryBuilder(text); 
 		SearchResponse response = beanDao.searchBeanByQuery(queryBuilder,selectedList);
+		//String filter = "play_name";
+		//SearchResponse response = beanDao.searchBeanByQuery(queryBuilder,selectedList, filter);
 		
 		logger.info("Method:searchBByQuery para exportar al csv "+ response.getHits().totalHits());
 		return SearchMapperUtil.getObjects(response, SHPRBean.class);

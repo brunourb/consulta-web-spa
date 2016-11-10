@@ -11,22 +11,24 @@ import pe.gob.sunat.sivep.web.util.EsType;
 public class SHPRBean implements Serializable {
 
 
-	@JsonProperty @JsonIgnore private Integer line_id;
-	@JsonProperty private String play_name;
+	//@JsonProperty @JsonIgnore private Integer line_id;
+	@JsonProperty   private Integer line_id;
+	@JsonProperty   private String play_name;
 	@JsonProperty	private Integer speech_number;
 	@JsonProperty	private String line_number;
 	@JsonProperty	private String speaker;
 	@JsonProperty	private String text_entry;
 	
 	@JsonIgnore	private boolean export;
-	
-	
+
 	public Integer getLine_id() {
 		return line_id;
 	}
+
 	public void setLine_id(Integer line_id) {
-		line_id = line_id;
+		this.line_id = line_id;
 	}
+
 	public String getPlay_name() {
 		return play_name;
 	}
