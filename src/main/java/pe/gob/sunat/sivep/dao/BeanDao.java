@@ -10,14 +10,14 @@ import pe.gob.sunat.sivep.model.SIVEPDatoBean;
 
 public interface BeanDao {
 
-	public SearchResponse searchBeanByQuery(QueryBuilder query);
-	public SearchResponse searchBeanByQuery(QueryBuilder query, List<String> lista);
-	public List<SHPRBean> searchWithoutDeselected(QueryBuilder query, List<String> lista);
-	public List<SHPRBean> searchScrollBByQuery(QueryBuilder query);
-	public List<SHPRBean> searchPaginationBByQuery(QueryBuilder query, Integer start,Integer finish);
-	public List<SIVEPDatoBean> searchScrollBeanByQuery(QueryBuilder query);
-	public List<SIVEPDatoBean> searchPaginationBeanByQuery(QueryBuilder query, Integer start,Integer finish);
-	public Long countQuery(QueryBuilder query);
-	public SearchResponse searchBeanByQuery(QueryBuilder query, List<String> lista,String filter);
-	public List<SIVEPDatoBean> searchForDeselected(QueryBuilder query, List<String> lista, String filter);
+	SearchResponse searchBeanByQuery(QueryBuilder query);
+	SearchResponse searchBeanByQuery(QueryBuilder query, List<String> lista);
+	List<SHPRBean> searchWithoutDeselected(QueryBuilder query, List<String> lista);
+	List<SHPRBean> searchScrollBByQuery(QueryBuilder query);
+	List<SHPRBean> searchPaginationBByQuery(QueryBuilder query, Integer start,Integer finish);
+	List<SIVEPDatoBean> searchScrollBeanByQuery(QueryBuilder query);
+	List<SIVEPDatoBean> searchPaginationBeanByQuery(QueryBuilder query, Integer start,Integer finish);
+	Long countQuery(QueryBuilder query);
+	SearchResponse searchBeanByQuery(QueryBuilder query, List<String> lista,String filter);
+	List<SIVEPDatoBean> searchForDeselected(QueryBuilder query, List<String> lista, String filter);
 }

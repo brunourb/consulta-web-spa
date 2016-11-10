@@ -26,7 +26,7 @@ public abstract class GenericDaoImpl {
 	public SearchResponse genericSearchByQuery(final QueryBuilder query) {
 
 		SearchResponse response = elasticSearchClient.prepareSearch(getIndexName()).setTypes(getTypeName())
-				.setQuery(query).setFrom(0).setSize(ClientProvider.).execute().actionGet();
+				.setQuery(query).setFrom(0).setSize(ClientProvider.TOTAL_NUMBER_RECORD).execute().actionGet();
 
 		return response;
 	}
