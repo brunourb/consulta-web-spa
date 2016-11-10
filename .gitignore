@@ -1,0 +1,40 @@
+# Java Generated
+*.class
+*.jar
+*.war
+*.ear
+
+*.log
+*.zip
+
+# other
+dump.rdb
+
+# gradle
+.gradle/
+bin/
+build/
+npm-debug.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Spring Generated
+.springBeans
+
+# Eclipse Generated
+.classpath
+.project
+.settings/
+.metadata/
+target/
+
+
+# IDEA
+.idea/
