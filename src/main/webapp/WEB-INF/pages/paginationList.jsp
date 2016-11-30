@@ -199,10 +199,12 @@
     	    	        }
     	    	    },
     	    	    "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-
-    	    	    	 var rowId = aData.line_number;
-    	    	         
-    	    	         if($.inArray(rowId, rows_selected) !== -1 ||  (exportStatus && ($.inArray(rowId, checksDesmarcados)=== -1))){
+    	    	    	debugger;	
+    	    	    	 var rowId = aData.line_id;
+    	    	    	 var indx = $.inArray(rowId.toString(), rows_selected);
+    	    	    		 
+    	    	         if(indx !== -1 ||  (exportStatus && ($.inArray(rowId, checksDesmarcados)=== -1))){
+    	    	        	 
     	    	            $(nRow).find('input[type="checkbox"]').prop('checked', true);
     	    	            $(nRow).addClass('selected');
     	    	         }
@@ -218,7 +220,7 @@
 					},
 					{ "mData": "line_id",
 						render: function ( value, type, row ) {
-							debugger;
+							
 					    	//return row.line_number +"-"+ row.speech_number;
 							return row.line_id;
 					    }
@@ -279,6 +281,8 @@
 
 		   // Handle click on "Select all" control
 		   $('#tableEjemplo thead input[name="select_all"]').on('click', function(e){
+			   
+			   
 		      if(this.checked){
 		         $('#tableEjemplo tbody input[type="checkbox"]:not(:checked)').trigger('click');
 		      } else {
