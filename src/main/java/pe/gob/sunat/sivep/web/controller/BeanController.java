@@ -85,7 +85,7 @@ public class BeanController {
 
 
 
-	@RequestMapping(value = "/exportCSV")
+	@RequestMapping(value = "/downloadCSV")
 	public ModelAndView exportCSV(@RequestParam("text") String text,HttpServletResponse response) throws Exception {
 
 		logger.info("incio del controller downloadCSV..."+text);
